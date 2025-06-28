@@ -1,0 +1,123 @@
+/* Dice roller container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Dice selector styles */
+.diceSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.diceButton {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--dice-border, #333);
+  border-radius: 4px;
+  background: var(--dice-bg, #f5f5f5);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.diceButton:hover:not(:disabled) {
+  background: var(--dice-hover, #e0e0e0);
+}
+
+.diceButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.diceButtonActive {
+  background: var(--player-color, #4caf50);
+  color: white;
+}
+
+/* Dice display styles */
+.diceDisplay {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  margin: 1rem 0;
+}
+
+.dice {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--animation-duration) ease-out;
+}
+
+/* Common dice face styles */
+.diceFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: white;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+}
+
+/* Specific dice type styles */
+.tetrahedron {
+  /* d4 specific styles */
+}
+
+.cube {
+  /* d6 specific styles */
+}
+
+/* Roll button styles */
+.rollButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--player-color, #4caf50);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.rollButton:hover:not(:disabled) {
+  background: var(--player-color-dark, #3e8e41);
+}
+
+.rollButton:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Result display */
+.resultDisplay {
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-height: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Accessibility focus styles */
+.diceButton:focus-visible,
+.rollButton:focus-visible {
+  outline: 2px solid var(--player-color, #4caf50);
+  outline-offset: 2px;
+}

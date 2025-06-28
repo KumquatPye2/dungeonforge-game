@@ -1,0 +1,143 @@
+/* Dashboard component styles with D&D theme */
+.dashboard {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #f0e6d2;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #5e2e0f;
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d4af37;
+  font-family: 'Times New Roman', serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.section {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #5e2e0f;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #d4af37;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  background-color: #5e2e0f;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  background-color: #7a3a12;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.characterCard, .campaignCard, .activityItem {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #5e2e0f;
+}
+
+.characterName {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #d4af37;
+}
+
+.characterDetails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.campaignName {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.activityTitle {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.activityTime {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.emptyState {
+  color: #aaa;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.error {
+  color: #ff6b6b;
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quickActions {
+    grid-template-columns: 1fr 1fr;
+  }
+}

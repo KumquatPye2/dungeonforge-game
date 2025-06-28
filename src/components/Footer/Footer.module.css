@@ -1,0 +1,16 @@
+.footer {
+  background-color: var(--dnd-dark);
+  color: var(--dnd-beige);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}

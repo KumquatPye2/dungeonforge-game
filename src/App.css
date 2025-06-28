@@ -1,0 +1,60 @@
+:root {
+  --dnd-red: #58180d;
+  --dnd-beige: #f2e5bc;
+  --dnd-dark: #1a1a1a;
+  --dnd-gold: #c9ad6a;
+  --dnd-blue: #0c4a6e;
+  --dnd-green: #166534;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Bookmania', 'Palatino Linotype', serif;
+  background-color: var(--dnd-beige);
+  color: var(--dnd-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dnd-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dnd-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dnd-red);
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid var(--dnd-blue);
+  outline-offset: 2px;
+}
