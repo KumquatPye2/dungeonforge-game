@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppTheme } from '../../types/index';
 
 // TODO: AI Sprint - Implement full LoadingSpinner functionality
 // This is a functional stub to make the app runnable
@@ -7,12 +8,14 @@ interface LoadingSpinnerProps {
   size?: 'small' | 'medium' | 'large';
   color?: string;
   message?: string;
+  theme?: AppTheme;
 }
 
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
   size = 'medium', 
   color = '#f72585',
-  message = 'Loading...'
+  message = 'Loading...',
+  theme
 }) => {
   const getSizeStyles = (size: string) => {
     switch (size) {

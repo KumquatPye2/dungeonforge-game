@@ -7,7 +7,7 @@ import DiceRoller from './components/DiceRoller';
 import Navigation from './components/Navigation';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorDisplay from './components/ErrorDisplay';
-import { RouteConfig, AppState } from './types';
+import { RouteConfig, AppState } from './types/index';
 
 const App: React.FC = () => {
   const [state, setState] = useState<AppState>({
@@ -35,7 +35,7 @@ const App: React.FC = () => {
   useEffect(() => {
     // Simulate loading
     const timer = setTimeout(() => {
-      setState(prev => ({ ...prev, isLoading: false }));
+      setState((prev: AppState) => ({ ...prev, isLoading: false }));
     }, 1000);
 
     return () => clearTimeout(timer);

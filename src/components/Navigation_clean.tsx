@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { RouteConfig, AppTheme } from '../types/index';
 
 // TODO: AI Sprint - Implement full Navigation functionality
 // This is a functional stub to make the app runnable
 
 interface NavigationProps {
-  routes?: RouteConfig[];
-  theme?: AppTheme;
+  // Add props as needed in future sprints
 }
 
-const Navigation: React.FC<NavigationProps> = ({ routes, theme }) => {
+const Navigation: React.FC<NavigationProps> = () => {
   const navStyle: React.CSSProperties = {
     background: 'linear-gradient(90deg, #1a1a2e 0%, #16213e 100%)',
     padding: '1rem 2rem',

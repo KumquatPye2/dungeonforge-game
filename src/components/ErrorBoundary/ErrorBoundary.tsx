@@ -1,5 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
-import ErrorDisplay from './ErrorDisplay';
+import ErrorDisplay from '../ErrorDisplay';
 
 interface Props {
   children: ReactNode;
@@ -31,7 +31,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback || <ErrorDisplay error={this.state.error} />;
+      return this.props.fallback || <ErrorDisplay error={this.state.error?.message || 'An error occurred'} />;
     }
 
     return this.props.children;

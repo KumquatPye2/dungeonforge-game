@@ -1,11 +1,13 @@
 import React from 'react';
+import { AppTheme } from '../../types/index';
 
 interface ErrorDisplayProps {
   error: string | null;
   onDismiss?: () => void;
+  theme?: AppTheme;
 }
 
-const ErrorDisplay: React.FC<ErrorDisplayProps> = ({ error, onDismiss }) => {
+const ErrorDisplay: React.FC<ErrorDisplayProps> = ({ error, onDismiss, theme }) => {
   if (!error) return null;
 
   return (
