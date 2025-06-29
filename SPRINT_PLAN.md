@@ -216,39 +216,278 @@ CharacterCreation/
 
 ---
 
-## 🏃‍♂️ **Next Immediate Actions**
+## 🚀 **SPRINT 6: Visual Campaign Environments - 2D Tilemaps**
+**Target Duration**: 7-8 days  
+**Goal**: Implement rich visual campaign environments with tilemap system
 
-### **Ready to Start Sprint 1**
+### 🎯 **Sprint 6 Objectives**
 
-1. **Setup AI Development Environment**
-   - Configure DeepSeek API for React component generation
-   - Set up automated GitHub commits for sprint progress
+#### **6.1 Tilemap Engine** (Priority: High)
+- [ ] **Canvas-based Renderer**: HTML5 Canvas or WebGL-based tilemap rendering
+- [ ] **Tile System**: Grid-based map system with multiple tile types
+- [ ] **Map Editor**: DM tool for creating and editing campaign maps
+- [ ] **Tileset Library**: Fantasy dungeon, forest, town, cave tilesets
 
-2. **Sprint 1 Kickoff Tasks**
-   - Generate enhanced CharacterCreation form component
-   - Implement ability score point-buy system
-   - Create race/class/background selection UI
+#### **6.2 Environment Assets** (Priority: High)
+- [ ] **Dungeon Tiles**: Stone floors, walls, doors, stairs, traps
+- [ ] **Outdoor Tiles**: Grass, trees, rocks, rivers, paths
+- [ ] **Town Tiles**: Buildings, roads, shops, taverns
+- [ ] **Special Tiles**: Treasure chests, altars, magical circles
 
-3. **Quality Assurance**
-   - Ensure app remains runnable after each component enhancement
-   - Test character creation flow end-to-end
-   - Validate D&D 5e rule compliance
+#### **6.3 Map Interaction** (Priority: High)
+- [ ] **Pan & Zoom**: Navigate large maps smoothly
+- [ ] **Grid Overlay**: Optional grid for movement measurement
+- [ ] **Fog of War**: Dynamic visibility system for exploration
+- [ ] **Interactive Objects**: Clickable doors, chests, NPCs
 
-### **Success Metrics**
+#### **6.4 Map Management** (Priority: Medium)
+- [ ] **Map Library**: Save and load custom maps
+- [ ] **Map Templates**: Pre-built campaign environments
+- [ ] **Import/Export**: Share maps between campaigns
+- [ ] **Performance Optimization**: Efficient rendering for large maps
 
-- **Sprint 1 Success**: Full character creation system functional
-- **App Always Runnable**: No broken builds during development
-- **User Experience**: Intuitive and visually appealing interface
-- **Code Quality**: Clean, maintainable TypeScript components
+### 🔧 **Sprint 6 Technical Implementation**
+
+#### **Component Structure**
+```
+MapSystem/
+├── TilemapRenderer.tsx          # Core tilemap rendering engine
+├── MapEditor.tsx                # DM map creation tool
+├── TilesetManager.tsx           # Manage tile assets
+├── CameraControls.tsx           # Pan/zoom functionality
+├── FogOfWarSystem.tsx           # Visibility management
+├── InteractiveObjects.tsx       # Clickable map elements
+└── MapSystem.module.css         # Styling
+```
+
+#### **Asset Organization**
+```
+public/assets/tilesets/
+├── dungeon/                     # Stone tiles, doors, stairs
+├── forest/                      # Trees, grass, rocks
+├── town/                        # Buildings, roads, furniture
+├── cave/                        # Cave walls, underground features
+└── objects/                     # Treasure chests, altars, etc.
+```
+
+### 📝 **Sprint 6 Acceptance Criteria**
+
+1. **Functional Tilemap System**: Smooth rendering of large maps
+2. **Rich Visual Environments**: Multiple tilesets for diverse settings
+3. **DM Map Editor**: Easy-to-use map creation tools
+4. **Performance**: 60fps rendering with fog of war
+5. **Interactive Elements**: Clickable objects and smooth navigation
 
 ---
 
-## 🎯 **Long-term Vision**
+## 🚀 **SPRINT 7: Character & Monster Sprites**
+**Target Duration**: 6-7 days  
+**Goal**: Add animated character and monster sprites to campaign maps
 
-By the end of these sprints, DungeonForge Online will be:
-- **Complete D&D Platform**: Full character management and gameplay tools
-- **Multiplayer Ready**: Real-time collaboration for remote D&D sessions
-- **AI-Enhanced**: Smart assistance for DMs and players
-- **Professional Quality**: Production-ready web application
+### 🎯 **Sprint 7 Objectives**
 
-The foundation is solid, and each sprint builds incrementally toward a comprehensive D&D gaming platform! 🐉✨
+#### **7.1 Character Sprites** (Priority: High)
+- [ ] **Player Character Sprites**: Animated sprites for all D&D classes
+- [ ] **Character Customization**: Different appearances for race/class combinations
+- [ ] **Animation States**: Idle, walking, attacking, casting, death
+- [ ] **Equipment Visualization**: Weapons and armor reflected in sprites
+
+#### **7.2 Monster Sprite Library** (Priority: High)
+- [ ] **Core D&D Monsters**: Dragons, goblins, orcs, skeletons, etc.
+- [ ] **Animated Monsters**: Idle, attack, death animations
+- [ ] **Size Variations**: Tiny, small, medium, large, huge, gargantuan
+- [ ] **Boss Monsters**: Special sprites for major campaign villains
+
+#### **7.3 Sprite System** (Priority: High)
+- [ ] **Sprite Engine**: Efficient sprite rendering and animation
+- [ ] **Token Placement**: Drag-and-drop sprite positioning
+- [ ] **Movement Animation**: Smooth sprite movement between tiles
+- [ ] **Combat Animations**: Attack and spell effect animations
+
+#### **7.4 Sprite Management** (Priority: Medium)
+- [ ] **Asset Pipeline**: Easy addition of new sprites
+- [ ] **Sprite Editor**: Basic customization tools
+- [ ] **Performance**: Optimized sprite batching and culling
+- [ ] **Mobile Support**: Touch-friendly sprite interaction
+
+### 🔧 **Sprint 7 Technical Implementation**
+
+#### **Component Structure**
+```
+SpriteSystem/
+├── SpriteRenderer.tsx           # Core sprite rendering
+├── CharacterSprite.tsx          # Player character sprites
+├── MonsterSprite.tsx            # Monster and NPC sprites
+├── AnimationController.tsx      # Animation state management
+├── SpriteSheet.tsx              # Sprite atlas management
+├── TokenManager.tsx             # Drag-drop token placement
+└── SpriteSystem.module.css      # Styling
+```
+
+#### **Asset Organization**
+```
+public/assets/sprites/
+├── characters/
+│   ├── fighter/                 # Fighter class variations
+│   ├── wizard/                  # Wizard class variations
+│   ├── rogue/                   # Rogue class variations
+│   └── cleric/                  # Cleric class variations
+├── monsters/
+│   ├── dragons/                 # Dragon sprites by type/age
+│   ├── humanoids/               # Goblins, orcs, bandits
+│   ├── undead/                  # Skeletons, zombies, ghosts
+│   └── beasts/                  # Bears, wolves, dire animals
+└── effects/
+    ├── spells/                  # Magic effect animations
+    ├── weapons/                 # Weapon attack effects
+    └── environmental/           # Fire, lightning, etc.
+```
+
+### 📝 **Sprint 7 Acceptance Criteria**
+
+1. **Rich Sprite Library**: Comprehensive character and monster sprites
+2. **Smooth Animations**: Fluid character and monster animations
+3. **Easy Token Management**: Intuitive sprite placement and movement
+4. **Performance**: Efficient rendering of multiple animated sprites
+5. **Visual Cohesion**: Consistent art style across all sprites
+
+---
+
+## 🚀 **SPRINT 8: NPCs & Interactive Campaign Elements**
+**Target Duration**: 5-6 days  
+**Goal**: Add rich NPC interactions and dynamic campaign elements
+
+### 🎯 **Sprint 8 Objectives**
+
+#### **8.1 NPC System** (Priority: High)
+- [ ] **NPC Sprite Library**: Diverse NPCs (merchants, guards, villagers, etc.)
+- [ ] **NPC Dialogue System**: Interactive conversation trees
+- [ ] **NPC Behaviors**: Patrol routes, daily schedules, reactions
+- [ ] **Quest Givers**: NPCs that provide missions and information
+
+#### **8.2 Interactive Elements** (Priority: High)
+- [ ] **Clickable Objects**: Doors, chests, levers, switches
+- [ ] **Environmental Interactions**: Readable books, climbable walls
+- [ ] **Puzzle Elements**: Pressure plates, magical barriers
+- [ ] **Dynamic Events**: Random encounters, weather effects
+
+#### **8.3 Campaign Storytelling** (Priority: Medium)
+- [ ] **Narrative System**: Story beats and campaign progression
+- [ ] **Journal System**: Quest log and campaign notes
+- [ ] **Cutscene Support**: Scripted story moments
+- [ ] **Multiple Endings**: Branching storylines based on choices
+
+#### **8.4 AI-Enhanced NPCs** (Priority: Medium)
+- [ ] **AI-Generated Dialogue**: Dynamic NPC conversations
+- [ ] **Personality System**: NPCs with distinct personalities
+- [ ] **Context-Aware Responses**: NPCs react to player actions
+- [ ] **Dynamic Quest Generation**: AI-created side quests
+
+### 🔧 **Sprint 8 Technical Implementation**
+
+#### **Component Structure**
+```
+NPCSystem/
+├── NPCManager.tsx               # NPC lifecycle management
+├── DialogueSystem.tsx           # Conversation interface
+├── QuestManager.tsx             # Quest tracking and completion
+├── InteractiveObjects.tsx       # Clickable environment elements
+├── CampaignNarrative.tsx        # Story progression system
+├── AIDialogueGenerator.tsx      # AI-powered NPC conversations
+└── NPCSystem.module.css         # Styling
+```
+
+#### **Data Structure**
+```
+campaign_data/
+├── npcs/
+│   ├── merchants.json           # Shop keepers and traders
+│   ├── guards.json              # Town guards and soldiers
+│   ├── villagers.json           # Common folk and workers
+│   └── quest_givers.json        # Important story NPCs
+├── quests/
+│   ├── main_story.json          # Primary campaign quests
+│   ├── side_quests.json         # Optional adventures
+│   └── generated_quests.json    # AI-created content
+└── dialogue/
+    ├── conversation_trees.json   # Dialogue options and branches
+    └── personality_traits.json  # NPC personality definitions
+```
+
+### 📝 **Sprint 8 Acceptance Criteria**
+
+1. **Rich NPC Interactions**: Engaging dialogue and quest systems
+2. **Interactive Environment**: Clickable objects enhance immersion
+3. **Dynamic Content**: AI-generated NPCs and quests
+4. **Story Integration**: NPCs advance campaign narrative
+5. **Player Agency**: Meaningful choices affect story outcomes
+
+---
+
+## 🚀 **SPRINT 9: Advanced Campaign Features**
+**Target Duration**: 8-9 days  
+**Goal**: Complete the campaign environment with advanced DM tools
+
+### 🎯 **Sprint 9 Objectives**
+
+#### **9.1 Advanced DM Tools** (Priority: High)
+- [ ] **Campaign Dashboard**: Comprehensive DM control panel
+- [ ] **Real-time Map Editing**: Live map changes during sessions
+- [ ] **Event Triggers**: Automated responses to player actions
+- [ ] **Campaign Analytics**: Player engagement and progression tracking
+
+#### **9.2 Environmental Systems** (Priority: High)
+- [ ] **Weather System**: Dynamic weather affecting gameplay
+- [ ] **Day/Night Cycle**: Time progression with visual changes
+- [ ] **Lighting System**: Torches, spells, and ambient lighting
+- [ ] **Sound Integration**: Ambient sounds and music
+
+#### **9.3 Combat Integration** (Priority: Medium)
+- [ ] **Battle Maps**: Specialized combat environments
+- [ ] **Initiative Integration**: Visual turn order on maps
+- [ ] **Area of Effect**: Visual spell and ability ranges
+- [ ] **Damage Visualization**: HP changes reflected on sprites
+
+#### **9.4 Campaign Persistence** (Priority: Medium)
+- [ ] **Save System**: Complete campaign state saving
+- [ ] **Session Recordings**: Replay important campaign moments
+- [ ] **Campaign Sharing**: Export/import entire campaigns
+- [ ] **Cloud Sync**: Campaign data backup and synchronization
+
+### 📝 **Sprint 9 Acceptance Criteria**
+
+1. **Complete DM Toolkit**: All necessary tools for campaign management
+2. **Immersive Environment**: Dynamic weather, lighting, and sound
+3. **Seamless Integration**: All systems work together smoothly
+4. **Data Persistence**: Reliable saving and loading of campaign state
+5. **Production Ready**: Stable, scalable campaign environment system
+
+---
+
+## 🎯 **Enhanced Long-term Vision**
+
+### **Visual Campaign Environment Features**
+
+By the completion of Sprints 6-9, DungeonForge Online will feature:
+
+🗺️ **Rich 2D Environments**
+- Multiple tileset themes (dungeons, forests, towns, caves)
+- Interactive objects and environmental storytelling
+- Dynamic fog of war and lighting systems
+
+👥 **Animated Character System**
+- Fully animated player character sprites for all D&D classes
+- Comprehensive monster library with size variations
+- Equipment visualization on character sprites
+
+🎭 **Interactive NPCs**
+- Diverse NPC sprite library with unique personalities
+- AI-powered dialogue generation for dynamic conversations
+- Quest systems integrated with campaign progression
+
+🎮 **Complete Campaign Platform**
+- Advanced DM tools for real-time campaign management
+- Environmental systems (weather, day/night, lighting)
+- Session recording and campaign sharing capabilities
+
+This comprehensive visual system will transform DungeonForge from a character management tool into a complete virtual tabletop experience, rivaling professional D&D platforms while maintaining the flexibility and AI-enhancement that sets it apart! 🐉✨
