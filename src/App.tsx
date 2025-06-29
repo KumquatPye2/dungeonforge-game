@@ -29,7 +29,8 @@ const App: React.FC = () => {
   const routes: RouteConfig[] = [
     { path: '/', element: <Welcome />, label: 'Welcome' },
     { path: '/character', element: <CharacterCreation />, label: 'Create Character' },
-    { path: '/dice', element: <DiceRoller />, label: 'Dice Roller' }
+    { path: '/dice', element: <DiceRoller />, label: 'Dice Roller' },
+    { path: '/campaigns', element: <div style={{padding: '2rem', textAlign: 'center', color: '#e6e6e6'}}>🤖 AI Campaign Hub - Coming in Sprint 3!</div>, label: 'AI Campaigns' }
   ];
 
   useEffect(() => {

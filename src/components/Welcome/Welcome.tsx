@@ -30,13 +30,13 @@ const Welcome: React.FC<WelcomeProps> = ({
       <h1 className={styles.title}>DungeonForge Online</h1>
       
       <p className={styles.subtitle}>
-        Embark on epic adventures with friends in this multiplayer D&D experience. 
-        Create your hero, join a party of 2-8 adventurers, and battle through 
-        tactical combat on a 2D grid. Will you answer the call to adventure?
+        Embark on epic solo adventures with your personal AI Dungeon Master! 
+        Create your hero and explore infinite AI-generated campaigns. 
+        Will you answer the call to adventure?
       </p>
       
       {isLoading ? (
-        <p className={styles.loading}>Connecting to multiplayer server...</p>
+        <p className={styles.loading}>Initializing AI Dungeon Master...</p>
       ) : error ? (
         <p className={styles.error} role="alert">
           {error} - Please refresh or try again later
@@ -46,17 +46,15 @@ const Welcome: React.FC<WelcomeProps> = ({
           className={styles.button}
           onClick={onCharacterCreate}
           onKeyDown={handleKeyDown}
-          aria-label="Begin character creation"
+          aria-label="Begin character creation for AI adventure"
           disabled={isLoading}
         >
-          Begin Your Adventure
+          Begin Your AI Adventure
         </button>
       )}
       
       <p className={styles.playerCount}>
-        {playerCount > 0 
-          ? `${playerCount} adventurers currently questing` 
-          : 'Be the first to embark!'}
+        Ready to explore infinite AI-generated worlds!
       </p>
     </div>
   );

@@ -125,3 +125,164 @@ export interface GameEvent {
   timestamp: Date;
   data: any;
 }
+
+// AI Campaign System Types
+export interface AICampaign {
+  id: string;
+  name: string;
+  theme: CampaignTheme;
+  difficulty: 'Easy' | 'Medium' | 'Hard' | 'Deadly';
+  currentLocation: string;
+  playerCharacter: Character;
+  worldState: WorldState;
+  sessionHistory: SessionEvent[];
+  isActive: boolean;
+  createdAt: Date;
+  lastPlayedAt: Date;
+}
+
+export interface CampaignTheme {
+  setting: 'High Fantasy' | 'Dark Fantasy' | 'Urban Fantasy' | 'Steampunk' | 'Cosmic Horror';
+  tone: 'Heroic' | 'Gritty' | 'Comedic' | 'Mystery' | 'Horror';
+  scope: 'Local' | 'Regional' | 'Continental' | 'Planar';
+}
+
+export interface WorldState {
+  currentChapter: number;
+  questLog: Quest[];
+  npcs: NPC[];
+  locations: Location[];
+  playerReputation: Record<string, number>;
+  worldEvents: WorldEvent[];
+}
+
+export interface Quest {
+  id: string;
+  title: string;
+  description: string;
+  type: 'Main' | 'Side' | 'Personal';
+  status: 'Active' | 'Completed' | 'Failed' | 'Available';
+  objectives: QuestObjective[];
+  rewards: QuestReward[];
+}
+
+export interface NPC {
+  id: string;
+  name: string;
+  role: string;
+  personality: string[];
+  relationship: number; // -100 to 100
+  location: string;
+  isAlive: boolean;
+  questsGiven: string[];
+}
+
+export interface Location {
+  id: string;
+  name: string;
+  type: 'Town' | 'Dungeon' | 'Wilderness' | 'Landmark';
+  description: string;
+  isDiscovered: boolean;
+  npcs: string[];
+  exits: LocationExit[];
+}
+
+export interface SessionEvent {
+  id: string;
+  timestamp: Date;
+  type: 'Combat' | 'Dialogue' | 'Exploration' | 'Quest' | 'Level Up';
+  description: string;
+  choices: PlayerChoice[];
+  outcome: string;
+}
+
+export interface PlayerChoice {
+  option: string;
+  selected: boolean;
+  consequences: string[];
+}
+
+// AI Integration Types
+export interface AIResponse {
+  narrative: string;
+  choices: string[];
+  worldUpdates: Partial<WorldState>;
+  combatEncounter?: CombatEncounter;
+  questUpdates?: QuestUpdate[];
+}
+
+export interface CombatEncounter {
+  enemies: Enemy[];
+  environment: string;
+  initiative: InitiativeOrder[];
+  isActive: boolean;
+}
+
+// Supporting Types for AI Campaign System
+export interface WorldEvent {
+  id: string;
+  type: 'Political' | 'Natural' | 'Magical' | 'Economic';
+  description: string;
+  isActive: boolean;
+  startDate: Date;
+  endDate?: Date;
+}
+
+export interface QuestObjective {
+  id: string;
+  description: string;
+  isCompleted: boolean;
+  isOptional: boolean;
+}
+
+export interface QuestReward {
+  type: 'Experience' | 'Gold' | 'Item' | 'Reputation';
+  amount: number;
+  description: string;
+}
+
+export interface LocationExit {
+  direction: string;
+  destination: string;
+  description: string;
+  isLocked: boolean;
+  requirements?: string[];
+}
+
+export interface QuestUpdate {
+  questId: string;
+  objectiveId?: string;
+  newStatus: string;
+  description: string;
+}
+
+export interface Enemy {
+  id: string;
+  name: string;
+  type: string;
+  hitPoints: number;
+  maxHitPoints: number;
+  armorClass: number;
+  abilities: Ability[];
+  position: Position;
+}
+
+export interface InitiativeOrder {
+  entityId: string;
+  entityName: string;
+  initiative: number;
+  isPlayer: boolean;
+}
+
+export interface Position {
+  x: number;
+  y: number;
+}
+
+export interface Ability {
+  name: string;
+  description: string;
+  damage?: string;
+  range?: number;
+  cooldown?: number;
+}

@@ -27,14 +27,14 @@ const CharacterCreation: React.FC<CharacterCreationProps> = ({
         marginBottom: '1rem',
         color: '#f72585'
       }}>
-        Character Creation for AI Adventures
+        Character Creation
       </h1>
       <p style={{ 
         fontSize: '1.2rem',
         marginBottom: '2rem',
         opacity: 0.8 
       }}>
-        Build your legendary D&D character for AI-generated campaigns!
+        Build your legendary D&D character here!
       </p>
       
       {error && (
@@ -57,11 +57,10 @@ const CharacterCreation: React.FC<CharacterCreationProps> = ({
         margin: '0 auto'
       }}>
         <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-          🤖 AI-powered character creation coming soon!
+          🎭 Character creation form coming soon!
         </p>
         <p style={{ fontSize: '1rem', opacity: 0.7 }}>
-          Create characters that will adventure in AI-generated campaigns. 
-          The AI Dungeon Master will craft personalized stories based on your character choices.
+          This feature will be implemented in the next AI development sprint.
         </p>
         {isLoading && (
           <div style={{ marginTop: '1rem' }}>
